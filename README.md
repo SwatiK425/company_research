@@ -13,3 +13,7 @@ This is a free, end-to-end AI agent that creates CPO-ready executive briefings f
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
+   
+### ✅ Import & run
+from agent import run_agent
+run_agent("Meta", earnings_url="https://...")
