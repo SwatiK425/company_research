@@ -1,19 +1,29 @@
 # Company Research Agent 🧠
 
-This is a free, end-to-end AI agent that creates CPO-ready executive briefings from a company’s earnings call.
+This project provides lightweight tools for generating CPO-ready briefs from company materials.
 
-### 🔍 What it does
-- Fetches transcript from an earnings call link
-- Cleans out non-essential sections
-- Summarizes the key strategic highlights using an LLM
-- Outputs an executive research brief
+## 🔍 Features
+- Summarize earnings call transcripts from a given URL
+- Generate a multi-section research report from local text files
 
-### ✅ How to Use (in Colab)
-1. Clone this repo into Colab or local Jupyter
+## 📦 Installation
+1. Clone this repo into Colab or a local environment
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
-   
-### ✅ Import & run
+   ```
+
+## ✅ Usage
+### Earnings Call Summaries
+```python
 from agent import run_agent
 run_agent("Meta", earnings_url="https://...")
+```
+
+### Comprehensive CPO Research
+Prepare a directory `data/<company_name>/` with text files such as `mission.txt`, `strategy.txt`, `investor_calls.txt`, etc. Then run:
+```python
+from cpo_research_agent import run_cpo_research
+print(run_cpo_research("acme"))
+```
+This will produce a brief with section headers for each available file.
